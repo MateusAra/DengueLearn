@@ -1,0 +1,116 @@
+﻿:root {
+    --offcanvas-width: 260px;
+    --topNavBarHeight: 30px;
+}
+
+.sidebar-nav {
+    width: var(--offcanvas-width);
+    border-color: #67B0B4
+}
+
+
+@media(min-width: 992px) {
+    body {
+        overflow: auto !important;
+        background: linear-gradient(70deg, rgba(18, 70, 0, 0.94), rgba(255, 193, 7, 0.39));
+    }
+
+    .offcanvas-backdrop::before {
+        display: none;
+    }
+
+    .main-logado {
+        margin-left: var(--offcanvas-width);
+    }
+
+    .sidebar-nav {
+        transform: none;
+        visibility: visible !important;
+        top: var(--topNavBarHeight);
+        height: calc(100% - var(--topNavBarHeight))
+    }
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-link .right-icon {
+    display: inline-flex;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+    transform: rotate(180deg);
+    transition: all ease 0.25s;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+.navcolor {
+    background-color: #78adb1
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    align-items: start;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.userlogged {
+    color: white;
+}
+
+.offcanvas-button-active {
+    color: white;
+}
+
+.line {
+    color: white;
+}
+
+.custom-input {
+    width: 400px; 
+}
+
+
+.dt-layout-row {
+    margin-bottom: 10px;
+}
+

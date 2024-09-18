@@ -1,0 +1,91 @@
+﻿@model List<UserModel>
+@{
+    ViewData["Title"] = "Listagem de Usuários";
+}
+
+
+<div class="container justify-content shadow navcolor mt-5">
+    <div>
+        <div class="alert" role="alert">
+            <h4 class="fw-bold">
+                Listagem de usuários
+            </h4>
+            <div class="small">
+                <i class="bi bi-house"></i> Core
+                <i class="bi bi-chevron-right"></i> Usuários
+                <i class="bi bi-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success text-center" id="message-alert" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn btn-close" id="close-alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger text-center" id="message-alert" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn btn-close close-alert" id="close-alert" aria-label="Close"></button>
+    </div>
+}
+
+
+
+<div class="container justify-content-center text-center mt-5 shadow">
+    <table class="table table-striped table-hover mt-3" id="tables-indexs">
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Usuário</th>
+                <th scope="col">Email</th>
+                <th scope="col">Data de atualização</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (UserModel user in Model)
+                {
+                    <tr>
+                        <td scope="row">@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.UpdatedDate</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"
+                                   asp-route-id="@user.Id" asp-controller="User" asp-action="GoToUpdateUser">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a role="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Visualizar"
+                                   asp-route-id="@user.Id" asp-controller="User" asp-action="GoToViewUser">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+@*                                 <a role="button" class="btn btn-warning" asp-route-id="@user.Id" asp-controller="User"
+                                asp-action="GoToResetPassword">
+                                    <i class="bi bi-key-fill fs-5"></i>
+                                </a> *@
+                                <a role="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Apagar"
+                                   asp-route-id="@user.Id" asp-controller="User" asp-action="GoToDeleteUser">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr class="text-center">
+                    <td scope="row">Não existem registros!</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
