@@ -1,14 +1,4 @@
-﻿:root {
-    --offcanvas-width: 260px;
-    --topNavBarHeight: 30px;
-}
-
-.sidebar-nav {
-    width: var(--offcanvas-width);
-    border-color: #67B0B4
-}
-
-
+﻿
 @media(min-width: 992px) {
     body {
         overflow: auto !important;
@@ -31,19 +21,6 @@
     }
 }
 
-.sidebar-link {
-    display: flex;
-    align-items: center;
-}
-
-.sidebar-link .right-icon {
-    display: inline-flex;
-}
-
-.sidebar-link[aria-expanded="true"] .right-icon {
-    transform: rotate(180deg);
-    transition: all ease 0.25s;
-}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -56,6 +33,7 @@ html {
 
 body {
     margin-bottom: 60px;
+    background: linear-gradient(70deg, rgba(18, 70, 0, 0.94), rgba(255, 193, 7, 0.39));
 }
 
 .field-validation-error {
@@ -63,7 +41,14 @@ body {
 }
 
 .navcolor {
-    background-color: #78adb1
+    background: rgba(76, 175, 80, 1);
+}
+
+.navbar-denguelearn {
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 90px;
+    margin-right: 60px;
 }
 
 .login-container {
@@ -82,6 +67,24 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: #fff;
     align-items: start;
+}
+
+.learn-container {
+    width: 1150px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    height:500px
+}
+
+.learn-container-content{
+    margin: 30px;
+}
+
+.user-dropdown{
+    border-radius: 30px
 }
 
 .login-form {

@@ -1,8 +1,8 @@
 ﻿@model UserModel
 
-<div class="collapse navbar-collapse navcolor" id="navbarSupportedContent">
-    <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="btn-group user-dropdown">
+        <button type="button" class="btn btn-secondary dropdown-toggle navcolor" data-bs-toggle="dropdown" aria-expanded="false">
             <a class="text-white fw-bold me-2" asp-controller="Home" asp-action="Index">@Model.UserName</a>
             <i class="bi bi-person-fill userlogged"></i>
         </button>

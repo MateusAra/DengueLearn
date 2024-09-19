@@ -6,7 +6,7 @@ namespace DengueLearn.Models
     {
         [Required(ErrorMessage = "Digite o email.")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Digite o usuário.")]
+        [Required(ErrorMessage = "Digite o nome de usuário.")]
         public string UserName { get; set; }
     }
 }
