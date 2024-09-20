@@ -1,18 +1,31 @@
-﻿@{
+﻿@model HomeModel
+@{
     ViewData["Title"] = "Aprendizado";
 }
 
 <div class="learn-container">
-    <div class="learn-container-content">
-        <iframe 
-            class="mt-4"
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/LopVIUrshf8?si=mS0BCjotWNGe_71v" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe>
+    <div class="container learn-container-content">
+        <div class="row">
+            <div class="col-md-7 video-default">
+                @Html.Raw(Model.Iframe)
+            </div>
+            <div class="col-md-5 column-list-videos">
+                <h4 class="text-black fw-bold mb-4">Aulas a seguir</h4>
+                <ul class="list-group video-list">
+                    <li class="list-group-item mb-2">
+                        <a asp-route-videoId="1" asp-action="Index" asp-controller="Home">Aula 1 - </a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <a asp-route-videoId="2" asp-action="Index" asp-controller="Home">Aula 2 - </a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <a asp-route-videoId="3" asp-action="Index" asp-controller="Home">Aula 3 - </a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <a asp-route-videoId="4" asp-action="Index" asp-controller="Home">Aula 4 - </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
