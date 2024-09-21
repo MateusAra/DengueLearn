@@ -9,10 +9,14 @@ namespace DengueLearn.Data
         public DengueLearnDbContext(DbContextOptions<DengueLearnDbContext> options) : base(options) { }
 
         public DbSet<UserModel> User { get; set; }
+        public DbSet<VideoModel> Video { get; set; }
+        public DbSet<QuestionModel> Question { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new VideoMap());
+            modelBuilder.ApplyConfiguration(new QuestionMap());
 
             base.OnModelCreating(modelBuilder);
         }

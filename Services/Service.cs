@@ -13,14 +13,20 @@ namespace DengueLearn.Services
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContext;
+        private readonly IVideoRepository _videoRepository;
+        private readonly IQuestionRepository _questionRepository;
 
         public Service(IUserRepository userRepository,
+            IQuestionRepository questionRepository,
+            IVideoRepository videoRepository,
             IConfiguration configuration,
             IHttpContextAccessor httpContext)
         {
             _userRepository = userRepository;
             _configuration = configuration;
             _httpContext = httpContext;
+            _videoRepository = videoRepository;
+            _questionRepository = questionRepository;
         }
 
         public UserModel AddUser(UserModel user)
@@ -147,6 +153,16 @@ namespace DengueLearn.Services
             var userUpdated = _userRepository.UpdateUser(userData);
 
             return userUpdated;
+        }
+
+        public VideoModel GetVideoById(long id)
+        {
+            return _videoRepository.GetVideoById(id);
+        }
+
+        public List<QuestionModel> GetAllQuestions()
+        {
+            return _questionRepository.GetAllQuestions();
         }
     }
 }

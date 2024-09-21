@@ -1,0 +1,31 @@
+﻿@model QuizModel
+
+<div class="learn-container">
+    <div class="container learn-container-content">
+        @using (Html.BeginForm("Submit", "Quizes", FormMethod.Post))
+        {
+            <div class="container text-black">
+                <h2>Quiz</h2>
+
+                @for (int i = 0; i < Model.Questions.Count; i++)
+                {
+                    <div class="question">
+                        <p><strong>@Model.Questions[i].Id - @Model.Questions[i].QuestionText</strong></p>
+
+                        @for (int j = 0; j < Model.Questions[i].GetOptions().Count; j++)
+                        {
+                            <div>
+                                <input type="radio" name="Questions[@i].SelectedOption" value="@Model.Questions[i].GetOptions()[j]" />
+                                <label>@Model.Questions[i].GetOptions()[j]</label>
+                            </div>
+                        }
+
+                        <input type="hidden" name="Questions[@i].Id" value="@Model.Questions[i].Id" />
+                    </div>
+                }
+
+                <button type="submit" class="btn btn-primary">Enviar Respostas</button>
+            </div>
+        }
+    </div>
+</div>

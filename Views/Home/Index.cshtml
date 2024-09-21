@@ -1,4 +1,4 @@
-﻿@model HomeModel
+﻿@model VideoModel
 @{
     ViewData["Title"] = "Aprendizado";
 }
@@ -8,21 +8,28 @@
         <div class="row">
             <div class="col-md-7 video-default">
                 @Html.Raw(Model.Iframe)
+                <hr class="text-black"/>
+                <h3 class="text-dark">@Model.Title</h3>
+                <h6 class="text-secondary">@Model.Description</h6>
             </div>
             <div class="col-md-5 column-list-videos">
                 <h4 class="text-black fw-bold mb-4">Aulas a seguir</h4>
                 <ul class="list-group video-list">
                     <li class="list-group-item mb-2">
-                        <a asp-route-videoId="1" asp-action="Index" asp-controller="Home">Aula 1 - </a>
+                        <input type="checkbox" /> - 
+                        <a asp-route-videoId="1" asp-action="Index" asp-controller="Home">Aula 1 - Sintomas da dengue.</a>
                     </li>
                     <li class="list-group-item mb-2">
-                        <a asp-route-videoId="2" asp-action="Index" asp-controller="Home">Aula 2 - </a>
+                        <input type="checkbox" /> -
+                        <a asp-route-videoId="2" asp-action="Index" asp-controller="Home">Aula 2 - Fases da dengue.</a>
                     </li>
                     <li class="list-group-item mb-2">
-                        <a asp-route-videoId="3" asp-action="Index" asp-controller="Home">Aula 3 - </a>
+                        <input type="checkbox" /> -
+                        <a asp-route-videoId="3" asp-action="Index" asp-controller="Home">Aula 3 - Como identificar a dengue grave?</a>
                     </li>
                     <li class="list-group-item mb-2">
-                        <a asp-route-videoId="4" asp-action="Index" asp-controller="Home">Aula 4 - </a>
+                        <input type="checkbox" /> -
+                        <a asp-route-videoId="4" asp-action="Index" asp-controller="Home">Aula 4 - Dengue e covid-19</a>
                     </li>
                 </ul>
             </div>

@@ -26,6 +26,8 @@ namespace DengueLearn
 
             builder.Services.AddScoped<IService, Service>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IVideoRepository, VideoRepository>();
+            builder.Services.AddScoped<IQuestionRepository, QuestionRespository>();
 
             builder.Services.AddSession(x =>
             {

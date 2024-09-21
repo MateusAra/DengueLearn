@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Quizes";
+}
+
+<div class="learn-container">
+    <div class="container learn-container-content">
+        <div class="row">
+            <h2 class="text-black text-center mt-5 mb-5">Todos os jogos</h2>
+            <div class="col text-black text-center">
+                <img src="~/mosquito.jpg" width="500px" height="300px" />
+                <a role="button" class="btn btn-secondary text-black title-quiz"
+                   asp-route-id="1" asp-controller="Quizes" asp-action="GetQuiz">
+                    Quiz sobre a prevenção da dengue.
+                </a>
+            </div>
+            <div class="col text-black text-center">
+                <img src="~/pneu.jpg" width="500px" height="300px" />
+                <a role="button" class="btn btn-secondary text-black title-quiz"
+                   asp-route-id="2" asp-controller="Quizes" asp-action="GetQuiz">
+                    Quiz sobre os sintomas e tratamento da Dengue.
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
