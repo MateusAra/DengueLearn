@@ -1,7 +1,25 @@
-﻿<div class="container">
-    <h2>Resultado do Questionário</h2>
+﻿@model QuizModel
 
-    <p>Você acertou @ViewBag.Score de @ViewBag.TotalQuestions perguntas.</p>
+@{
+    ViewData["Title"] = "Quiz";
+}
 
-    <a href="/Quiz/Index" class="btn btn-secondary">Refazer Questionário</a>
+<div class="result-container">
+    <div class="container learn-container-content">
+        <div class="row text-black text-center">
+            <div class="container">
+                <h3 class="title-quiz-page mb-2">Resultado do Questionário</h3>
+
+                @if (ViewBag.Score == ViewBag.TotalQuestions)
+                {
+                    <img src="~/image-removebg-preview.png" />
+                    <p class="mt-2"><strong>Você passou</strong>, acertou @ViewBag.Score de @ViewBag.TotalQuestions perguntas.</p>
+                }
+                else
+                {
+                    <p class="mt-2">Você acertou @ViewBag.Score de @ViewBag.TotalQuestions perguntas.</p>
+                }
+            </div>
+        </div>
+    </div>
 </div>

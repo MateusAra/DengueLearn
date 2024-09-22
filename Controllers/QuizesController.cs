@@ -36,6 +36,7 @@ namespace DengueLearn.Controllers
             int score = 0;
             var questions = _service.GetAllQuestions();
             var correctAnswers = new Dictionary<long, string>();
+            var user = _service.GetUserSession();
 
             foreach (var question in questions)
             {
@@ -48,6 +49,18 @@ namespace DengueLearn.Controllers
                 {
                     score++;
                 }
+            }
+
+            if (score == quiz.Questions.Count)
+            {
+                var result = new ResultQuizModel()
+                {
+                    Passed = true,
+                    QuizId = quiz.Id,
+                    UserId = user.Id
+                };
+
+                _service.AddResult(result);
             }
 
             ViewBag.Score = score;

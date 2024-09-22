@@ -15,8 +15,10 @@ namespace DengueLearn.Services
         private readonly IHttpContextAccessor _httpContext;
         private readonly IVideoRepository _videoRepository;
         private readonly IQuestionRepository _questionRepository;
+        private readonly IResultQuizRespository _resultQuizRespository;
 
         public Service(IUserRepository userRepository,
+            IResultQuizRespository resultQuizRespository,
             IQuestionRepository questionRepository,
             IVideoRepository videoRepository,
             IConfiguration configuration,
@@ -27,6 +29,7 @@ namespace DengueLearn.Services
             _httpContext = httpContext;
             _videoRepository = videoRepository;
             _questionRepository = questionRepository;
+            _resultQuizRespository = resultQuizRespository;
         }
 
         public UserModel AddUser(UserModel user)
@@ -163,6 +166,16 @@ namespace DengueLearn.Services
         public List<QuestionModel> GetAllQuestions()
         {
             return _questionRepository.GetAllQuestions();
+        }
+
+        public ResultQuizModel AddResult(ResultQuizModel resultQuiz)
+        {
+            return _resultQuizRespository.AddResult(resultQuiz);
+        }
+
+        public List<ResultQuizModel> GetAllResults()
+        {
+            return _resultQuizRespository.GetAllResults();
         }
     }
 }

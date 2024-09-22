@@ -79,6 +79,26 @@ body {
     height:600px
 }
 
+.quiz-container {
+    width: 1150px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    height: 1000px
+}
+
+.result-container {
+    width: 1150px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    height: 400px
+}
+
 .learn-container-content{
     margin: 30px;
 }

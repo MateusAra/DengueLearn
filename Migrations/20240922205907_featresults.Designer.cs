@@ -4,6 +4,7 @@ using DengueLearn.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DengueLearn.Migrations
 {
     [DbContext(typeof(DengueLearnDbContext))]
-    partial class DengueLearnDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240922205907_featresults")]
+    partial class featresults
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,6 +74,8 @@ namespace DengueLearn.Migrations
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("ResultQuiz");
                 });
@@ -132,6 +137,17 @@ namespace DengueLearn.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Video");
+                });
+
+            modelBuilder.Entity("DengueLearn.Models.ResultQuizModel", b =>
+                {
+                    b.HasOne("DengueLearn.Models.UserModel", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

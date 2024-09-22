@@ -17,5 +17,7 @@ namespace DengueLearn.Services.Interfaces
         void RemoveUserSession();
         VideoModel GetVideoById(long id);
         List<QuestionModel> GetAllQuestions();
+        ResultQuizModel AddResult(ResultQuizModel resultQuiz);
+        List<ResultQuizModel> GetAllResults();
     }
 }
