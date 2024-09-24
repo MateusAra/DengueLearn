@@ -1,0 +1,60 @@
+﻿@model List<ResultQuizModel>
+
+@{
+    ViewData["Title"] = "Conquistas";
+    int count = 0;
+}
+
+<div class="result-container">
+    <div class="container learn-container-content">
+        <div class="row text-black text-center">
+            <h2 class="text-black text-center mt-2 mb-2">Conquistas</h2>
+            @if(Model != null && Model.Any())
+            {
+                foreach (ResultQuizModel item in Model)
+                {
+                    if (count % 2 == 0)
+                    {
+                        @Html.Raw("<div class=\"row\">")
+                    }
+
+                    <div class="col-md-6">
+                        @if (item.QuizId == 1)
+                        {
+                            <div class="">
+                                <img src="~/mosquito.jpg" width="500px" height="300px" />
+                                <img src="~/image-removebg-preview.png" class="conquist" />
+                                <a role="button" class="btn btn-secondary text-black title-conquist">
+                                    Quiz sobre a prevenção da dengue.
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="">
+                                <img src="~/pneu.jpg" width="500px" height="300px" />
+                                <img src="~/image-removebg-preview.png" class="conquist" />
+                                <a role="button" class="btn btn-secondary text-black title-conquist">
+                                    Quiz sobre os sintomas e tratamento da Dengue.
+                                </a>
+                            </div>
+                        }
+                    </div>
+
+                    if (count % 2 == 1)
+                    {
+                        @Html.Raw("/<div>")
+                    }
+
+                    count++;
+                }
+
+                @* Fecha a última linha aberta caso a quantidade de itens seja ímpar *@
+                if (count % 2 != 0)
+                {
+                    @Html.Raw("</div>")
+                }
+            }
+        </div>
+    </div>
+</div>

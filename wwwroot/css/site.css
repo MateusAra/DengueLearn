@@ -34,6 +34,8 @@ html {
 body {
     margin-bottom: 60px;
     background: linear-gradient(70deg, rgba(18, 70, 0, 0.94), rgba(255, 193, 7, 0.39));
+    font-family: 'Mongolian Baiti';
+    font-size: 17px;
 }
 
 .field-validation-error {
@@ -86,7 +88,7 @@ body {
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: #fff;
-    height: 1000px
+    height: 1100px
 }
 
 .result-container {
@@ -156,4 +158,22 @@ a {
 
 .title-quiz-page {
     margin-top: 60px;
+}
+
+.hideEl{
+    display: none;
+}
+
+img{
+    border-radius: 30px;
+}
+
+.conquist{
+    margin-top: -500px;
+    width: 80px;
+    margin-left: 300px
+}
+
+.title-conquist{
+    margin-top: -150px;
 }

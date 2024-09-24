@@ -53,20 +53,35 @@ namespace DengueLearn.Controllers
 
             if (score == quiz.Questions.Count)
             {
-                var result = new ResultQuizModel()
-                {
-                    Passed = true,
-                    QuizId = quiz.Id,
-                    UserId = user.Id
-                };
+                var alreadyResult = _service.GetAllResults();
 
-                _service.AddResult(result);
+                if (alreadyResult.FirstOrDefault(x => x.UserId == user.Id && x.QuizId == quiz.Id) == null)
+                {
+                    var result = new ResultQuizModel()
+                    {
+                        Passed = true,
+                        QuizId = quiz.Id,
+                        UserId = user.Id
+                    };
+
+                    _service.AddResult(result);
+                }
             }
 
             ViewBag.Score = score;
             ViewBag.TotalQuestions = quiz.Questions.Count;
 
             return View("Result");
+        }
+
+        public IActionResult GetConquists()
+        {
+            var user = _service.GetUserSession();
+            var results = _service.GetAllResults();
+
+            var conquists = results.Where(x => x.Passed == true && x.UserId == user.Id).ToList();
+
+            return View(conquists);
         }
     }
 }

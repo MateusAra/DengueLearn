@@ -1,15 +1,14 @@
 ﻿@model QuizModel
 
 @{
-    ViewData["Title"] = "Quiz";
+    ViewData["Title"] = "Resultado";
 }
 
 <div class="result-container">
     <div class="container learn-container-content">
         <div class="row text-black text-center">
             <div class="container">
-                <h3 class="title-quiz-page mb-2">Resultado do Questionário</h3>
-
+                <h4 class="title-quiz-page mb-4">Resultado do Questionário</h4>
                 @if (ViewBag.Score == ViewBag.TotalQuestions)
                 {
                     <img src="~/image-removebg-preview.png" />
@@ -17,8 +16,10 @@
                 }
                 else
                 {
-                    <p class="mt-2">Você acertou @ViewBag.Score de @ViewBag.TotalQuestions perguntas.</p>
+                    <img src="~/deslegal.png" width="100px"/>
+                    <p class="mt-4">Você acertou @ViewBag.Score de @ViewBag.TotalQuestions perguntas. '-'</p>
                 }
+                <a role="button" asp-controller="Quizes" asp-action="Index" class="btn btn-secondary">Voltar</a>
             </div>
         </div>
     </div>
