@@ -1,6 +1,7 @@
 ﻿using DengueLearn.Models;
 using DengueLearn.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace DengueLearn.Controllers
 {
@@ -82,6 +83,15 @@ namespace DengueLearn.Controllers
             var conquists = results.Where(x => x.Passed == true && x.UserId == user.Id).ToList();
 
             return View(conquists);
+        }
+
+        public IActionResult GetCertificate(int quizId)
+        {
+            var user = _service.GetUserSession();
+
+            ViewBag.QuizId = quizId;
+
+            return View(user);
         }
     }
 }

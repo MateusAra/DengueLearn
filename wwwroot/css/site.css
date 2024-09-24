@@ -8,17 +8,6 @@
     .offcanvas-backdrop::before {
         display: none;
     }
-
-    .main-logado {
-        margin-left: var(--offcanvas-width);
-    }
-
-    .sidebar-nav {
-        transform: none;
-        visibility: visible !important;
-        top: var(--topNavBarHeight);
-        height: calc(100% - var(--topNavBarHeight))
-    }
 }
 
 
@@ -34,7 +23,6 @@ html {
 body {
     margin-bottom: 60px;
     background: linear-gradient(70deg, rgba(18, 70, 0, 0.94), rgba(255, 193, 7, 0.39));
-    font-family: 'Mongolian Baiti';
     font-size: 17px;
 }
 
@@ -157,7 +145,7 @@ a {
 }
 
 .title-quiz-page {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .hideEl{
@@ -176,4 +164,10 @@ img{
 
 .title-conquist{
     margin-top: -150px;
+}
+
+.name-certificate{
+    margin-top: -20px;
+    margin-right: 600px;
+    color: blue;
 }

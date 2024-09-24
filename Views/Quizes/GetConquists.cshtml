@@ -8,7 +8,7 @@
 <div class="result-container">
     <div class="container learn-container-content">
         <div class="row text-black text-center">
-            <h2 class="text-black text-center mt-2 mb-2">Conquistas</h2>
+            <h2 class="text-black text-center mt-4 mb-2">Conquistas</h2>
             @if(Model != null && Model.Any())
             {
                 foreach (ResultQuizModel item in Model)
@@ -24,7 +24,8 @@
                             <div class="">
                                 <img src="~/mosquito.jpg" width="500px" height="300px" />
                                 <img src="~/image-removebg-preview.png" class="conquist" />
-                                <a role="button" class="btn btn-secondary text-black title-conquist">
+                                <a role="button" class="btn btn-secondary text-black title-conquist"
+                                   asp-controller="Quizes" asp-action="GetCertificate" asp-route-quizId="1">
                                     Quiz sobre a prevenção da dengue.
                                 </a>
                             </div>
@@ -34,7 +35,8 @@
                             <div class="">
                                 <img src="~/pneu.jpg" width="500px" height="300px" />
                                 <img src="~/image-removebg-preview.png" class="conquist" />
-                                <a role="button" class="btn btn-secondary text-black title-conquist">
+                                <a role="button" class="btn btn-secondary text-black title-conquist"
+                                   asp-controller="Quizes" asp-action="GetCertificate" asp-route-quizId="2">
                                     Quiz sobre os sintomas e tratamento da Dengue.
                                 </a>
                             </div>
@@ -49,7 +51,6 @@
                     count++;
                 }
 
-                @* Fecha a última linha aberta caso a quantidade de itens seja ímpar *@
                 if (count % 2 != 0)
                 {
                     @Html.Raw("</div>")

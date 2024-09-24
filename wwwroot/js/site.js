@@ -1,4 +1,4 @@
-﻿//Notify
+﻿
 $('#close-alert').click(function () {
     $('#message-alert').hide('hide');
 });

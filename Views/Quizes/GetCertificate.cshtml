@@ -1,0 +1,38 @@
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "Certificado";
+}
+
+<div class="result-container">
+    <div class="container learn-container-content">
+        <div class="row text-black text-center">
+            @if (ViewBag.QuizId == 1)
+            {
+                <h2 class="text-black text-center mt-2 mb-2"><strong>Certificado:</strong> Quiz sobre a prevenção da dengue 100%.</h2>
+                <div>
+                    <img src="~/badge.jpeg" width="300px" class="me-5"/>
+                    <img src="~/mosquito.jpg" width="500px" height="300px" />
+                    <img src="~/image-removebg-preview.png" class="conquist" />
+                    <a role="button" class="btn btn-secondary text-black title-conquist">
+                        Quiz sobre a prevenção da dengue.
+                    </a>
+                    <h3 class="name-certificate"><strong>@Model.UserName</strong></h3>
+                </div>
+            }
+            else
+            {
+                <h2 class="text-black text-center mt-2 mb-2">Certificado Quiz sobre os sintomas e tratamento da Dengue.</h2>
+                <div>
+                    <img src="~/badge.jpeg" width="300px" class="me-5" />
+                    <img src="~/pneu.jpg" width="500px" height="300px" />
+                    <img src="~/image-removebg-preview.png" class="conquist" />
+                    <a role="button" class="btn btn-secondary text-black title-conquist">
+                        Quiz sobre os sintomas e tratamento da Dengue.
+                    </a>
+                    <h3 class="name-certificate"><strong>@Model.UserName</strong></h3>
+                </div>
+            }
+        </div>
+    </div>
+</div>
