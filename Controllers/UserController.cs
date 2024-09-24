@@ -14,13 +14,6 @@ namespace DengueLearn.Controllers
             _service = service;
         }
 
-        public IActionResult Index()
-        {
-            var users = _service.GetAllUsers();
-
-            return View(users);
-        }
-
         public IActionResult GoToAddUser()
         {
             return View();
