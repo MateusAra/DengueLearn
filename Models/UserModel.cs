@@ -1,5 +1,4 @@
-﻿using DengueLearn.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DengueLearn.Models
 {

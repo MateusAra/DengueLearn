@@ -47,20 +47,6 @@ namespace DengueLearn.Services
             _httpContext.HttpContext.Session.SetString("userSessionLogged", userSession);
         }
 
-        public bool DeleteUser(long id)
-        {
-            var user = GetUserById(id);
-
-            var deleted = _userRepository.DeleteUser(user);
-
-            return deleted;
-        }
-
-        public List<UserModel> GetAllUsers()
-        {
-            return _userRepository.GetAllUsers();
-        }
-
         public UserModel? GetUserById(long id)
         {
             var user = _userRepository.GetUserById(id);
