@@ -10,17 +10,17 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 navbar-denguelearn">
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom box-shadow mb-3 navbar-denguelearn">
             <div class="container-fluid">
                 <a class="navbar-brand ms-5" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/ce.jpeg" width="150px"/>
+                    <img src="~/ce.jpeg" class="img-fluid" style="max-height: 50px;" alt="Logo" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Aprendizado</a>
                         </li>
@@ -31,15 +31,14 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Quizes" asp-action="GetConquists">Conquistas</a>
                         </li>
                     </ul>
-                </div>
-                <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
-                    <div class="d-flex ms-auto" role="search">
+                    <div class="d-flex ms-auto">
                         @await Component.InvokeAsync("Menu")
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -7,19 +7,21 @@
 <div class="result-container">
     <div class="container learn-container-content">
         <div class="row text-black text-center">
-            <div class="container">
+            <div class="col-12">
                 <h4 class="title-quiz-page mb-4">Resultado do Questionário</h4>
+
                 @if (ViewBag.Score == ViewBag.TotalQuestions)
                 {
-                    <img src="~/image-removebg-preview.png" />
+                    <img src="~/image-removebg-preview.png" class="img-fluid" alt="Imagem de Sucesso" />
                     <p class="mt-2"><strong>Você passou</strong>, acertou @ViewBag.Score de @ViewBag.TotalQuestions perguntas.</p>
                 }
                 else
                 {
-                    <img src="~/deslegal.png" width="100px"/>
+                    <img src="~/deslegal.png" class="img-fluid" style="max-width: 100px;" alt="Imagem de Tentativa" />
                     <p class="mt-4">Você acertou @ViewBag.Score de @ViewBag.TotalQuestions perguntas. '-'</p>
                 }
-                <a role="button" asp-controller="Quizes" asp-action="Index" class="btn btn-secondary">Voltar</a>
+
+                <a role="button" asp-controller="Quizes" asp-action="Index" class="btn btn-secondary mt-4">Voltar</a>
             </div>
         </div>
     </div>

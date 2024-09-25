@@ -7,7 +7,9 @@
     <div class="container learn-container-content">
         <div class="row">
             <div class="col-md-7 video-default">
-                @Html.Raw(Model.Iframe)
+                <div class="responsive-iframe-container">
+                    @Html.Raw(Model.Iframe)
+                </div>
                 <hr class="text-black"/>
                 <h3 class="text-dark">@Model.Title</h3>
                 <h6 class="text-secondary">@Model.Description</h6>
